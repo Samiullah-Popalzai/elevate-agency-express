@@ -1,0 +1,17 @@
+
+services:
+  db:
+    image: postgres:18
+    container_name: elevate-agency-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: elevate_agency
+      POSTGRES_USER: elevate_user
+      POSTGRES_PASSWORD: elevate_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - elevate_agency_data:/var/lib/postgresql
+
+volumes:
+  elevate_agency_data:
