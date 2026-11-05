@@ -12,6 +12,6 @@ services:
       - "5432:5432"
     volumes:
       - elevate_agency_data:/var/lib/postgresql
-
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
 volumes:
   elevate_agency_data:
